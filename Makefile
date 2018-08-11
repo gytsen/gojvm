@@ -8,7 +8,10 @@ $(OUTDIR):
 	mkdir $(OUTDIR)
 
 ijvm: $(OUTDIR)
-	go build -o $(OUTDIR)/$@ $(PKG)/cmd/ijvm 
+	go build -o $(OUTDIR)/$@ $(PKG)/cmd/$@ 
+
+test-stack: 
+	go test $(PKG)/pkg/stack
 
 .PHONY: clean
 
